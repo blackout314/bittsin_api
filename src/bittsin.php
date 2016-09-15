@@ -8,9 +8,8 @@ namespace bittsin\Api;
  * @package bittsin\Api
  */
 class bittsin {
-  public $conf = array();
   private $KEY;
-  const URL = 'http://bitts.in/api/?';
+  private $URL = 'http://bitts.in/api/?';
   /**
    * Constructor
    *
@@ -33,7 +32,7 @@ class bittsin {
       'api'   => $this->KEY,
       'url'   => $url,
     ];
-    if($data = file_get_contents(URL.http_build_query($query)))
+    if($data = file_get_contents($this->URL.http_build_query($query)))
     {
       return $data;
     }
